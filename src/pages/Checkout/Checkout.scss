@@ -4,6 +4,7 @@
     .checkout-header {
         text-align: center;
         padding: 1em;
+
     }
     .form-headers {
         width: 50%;
@@ -11,6 +12,10 @@
         justify-content: space-between;
         padding: .5em .3em;
         margin: 0 auto;
+
+        h5 {
+            padding: .5em 1em;
+        }
     }
 
     .checkout-container {
@@ -75,4 +80,5 @@
 
 .demo {
     background-color: red;
+    color: white;
 }

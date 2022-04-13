@@ -5,8 +5,8 @@
       margin: 0 auto;
       padding: .3em 1em;
       color: white;
-      max-width: 450px;
-      height: 235px;
+      max-width: 455px;
+      height: 260px;
       border-radius: 11px;
       background: linear-gradient(135deg, #45484d 0%,#000000 100%);
       box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
@@ -31,20 +31,69 @@
         height: 50px;
         margin-top: 2.3em;
         margin-left: .4em;
-        background: url(https://www.thebeneficial.com/portals/beneficialbankwebsite/images/chip.png);
+        background: url('../../assets/img/chip.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
       }
       .card-info {
-       
-        #exp-date {
-          position: relative;
-        //   left: 11.5em;
-        //   bottom: 3em;
-        top: 3em;
-          font-size: .8em;
-          opacity: .9;
+        
+        .card-number {
+            width: 80%;
+            padding: 0 .3em;
+            margin: .5em 0;
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .card-name {
+            width: 60%;
+            padding: 0 .3em;
+            &:focus {
+                outline: none;
+            }
+        }
+
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: .3em;
+            #exp-date {
+                position: relative;
+                display: flex;
+                align-items: center;
+                //   left: 2em;
+                font-size: 1em;
+                // opacity: .9;
+                
+                .expiry {
+                    margin: .2em;
+                    width: 40px;
+                    text-align: center;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+            }
+            .cvv {
+                display: flex;
+                align-items: center;
+               
+                input {
+                    width: 50px;
+                    text-align: center;
+                    margin-left: .3em;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
         }
       }
       #mastercard {

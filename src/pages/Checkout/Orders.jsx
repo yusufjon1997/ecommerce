@@ -7,8 +7,8 @@ function Orders() {
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectTotalPrice);
 
-
   return (
+    
     <div className='orders-container'>
       <div className="orders-header">
         <h5 className='title'>Orders</h5>
@@ -34,4 +34,6 @@ function Orders() {
   )
 }
 
-export default Orders
+export default Orders;
+
+

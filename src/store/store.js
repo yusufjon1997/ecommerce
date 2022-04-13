@@ -1,7 +1,18 @@
 import { compose , createStore , applyMiddleware } from "redux";
+import { persistStore , persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import logger from "redux-logger";
 
 import { rootReducer } from "./rootReducer";
+
+
+const persistConfig = {
+    key: 'root',
+    storage, 
+    blacklist : ['user']
+}
+
+const persistedReducer = persistReducer(persistConfig , rootReducer);
 
 /// root reducers 
 
@@ -10,4 +21,6 @@ const middleWares = [logger];
 
 const composeEnhencers = compose(applyMiddleware(...middleWares));// this pass every middlewares 
 
-export const store = createStore(rootReducer, undefined , composeEnhencers);
+export const store = createStore(persistedReducer, undefined , composeEnhencers);
+
+export const persistor = persistStore(store);
