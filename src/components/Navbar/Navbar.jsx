@@ -1,16 +1,27 @@
-import React , { useContext} from 'react'
-import { UserContext } from '../../contexts/user-context';
+import React  from 'react'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { selectCurrentUser } from '../../store/user/userSelector';
+import { selectTotalCartItems } from '../../store/cart/cartSelector';
+
+
 import { signOutUser } from '../../utils/firebase/Firebase';
 import {FaRegHeart } from 'react-icons/fa';
 import { BsCart2 } from 'react-icons/bs';
 import { MdOutlineAccountCircle } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import './Navbar.style.scss';
+import { CartContext } from '../../contexts/cartContext';
 
 
 function Navbar() {
 
-  const { currentUser } = useContext(UserContext);
+const navigate = useNavigate();
+
+const totalCartItems = useSelector(selectTotalCartItems);
+const currentUser =  useSelector(selectCurrentUser);
+
+  
 
 
   return (
@@ -24,7 +35,7 @@ function Navbar() {
                   <Link to='/' >Home</Link>
               </li>
               <li className='menu-item'>
-                  <Link to='/' >Products</Link>
+                  <Link to='/shop' >Products</Link>
               </li>
               <li className='menu-item'>
                   <Link to='/about' >About</Link>
@@ -36,7 +47,7 @@ function Navbar() {
         </div>
         <div className="icons">
           <div className="icon"> <FaRegHeart /> </div>
-          <div className="icon"> <BsCart2 /> </div>
+          <div className="icon" onClick={()=> navigate('/cart')}> <BsCart2 /> { totalCartItems } </div>
             {
              currentUser ? (<div className="icon" onClick={signOutUser}> Sign Out</div>) 
             :  (<div className="icon"><Link to="/auth">Sign in</Link> </div>)
