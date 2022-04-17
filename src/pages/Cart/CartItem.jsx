@@ -38,7 +38,7 @@ const clearItem = () => dispatch(clearItemFromCart(currentCartItems , cartItem))
         <div className="cart-item-detail">
             <h5>{cartItem.price}$</h5>
         </div>
-        <span onClick={clearItem}>X</span>
+        <span className='remove' onClick={clearItem}>X</span>
     </div>
   )
 }

@@ -1,5 +1,6 @@
-import { compose , createStore , applyMiddleware } from "redux";
+import { createStore , applyMiddleware } from "redux";
 import { persistStore , persistReducer } from 'redux-persist';
+import { composeWithDevTools } from '@redux-devtools/extension';
 import storage from 'redux-persist/lib/storage';
 import logger from "redux-logger";
 
@@ -17,10 +18,10 @@ const persistedReducer = persistReducer(persistConfig , rootReducer);
 /// root reducers 
 
 //middleWares when action dispatched before action hits the reducers  it hits the middleware first
-const middleWares = [logger];
+// const middleWares = [logger];
 
-const composeEnhencers = compose(applyMiddleware(...middleWares));// this pass every middlewares 
+// const composeEnhencers = composeWithDevTools(applyMiddleware(...middleWares));// this pass every middlewares 
 
-export const store = createStore(persistedReducer, undefined , composeEnhencers);
+export const store = createStore(persistedReducer, undefined , composeWithDevTools());
 
 export const persistor = persistStore(store);

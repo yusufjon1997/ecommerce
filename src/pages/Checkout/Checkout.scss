@@ -13,8 +13,26 @@
         padding: .5em .3em;
         margin: 0 auto;
 
-        h5 {
-            padding: .5em 1em;
+        .arrowBar{
+            clip-path: polygon(0 0, 85% 0, 100% 50%, 86% 100%, 0 100%, 14% 50%);
+            background: red;
+            height: 60px;
+            width: 250px;
+            padding: 0 20px 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: ease-in-out 0.2s;
+            cursor: pointer;
+
+            &:first-child {
+                clip-path: polygon(0 0, 85% 0, 100% 50%, 86% 100%, 0 100%, 0% 50%);
+            }
+        }
+        .demo {
+            background-color: #F0A500;
+            color: black;
         }
     }
 
@@ -25,22 +43,31 @@
 
         .forms {
             width: 60%;
-            // border: 1px solid green;
+
         }
         .orders-container {
             width: 40%;
             border: 1px solid rgb(248, 203, 203);
             border-radius: 5px;
-            background-color: rgb(248, 203, 203);
+            background-color: #E6D5B8;
+            position: relative;
+
             .orders-header {
                 display:  flex;
                 justify-content: space-between;
                 padding: .5em 1em;
+                position: relative;
+
+                span {
+                    color: white;
+                    background-color: red;
+                    padding: 4px 9px;
+                    border-radius: 50%;
+                }
             }
 
             .orders {
-                // padding: 1em .5em;
-                
+
                 .order {
                     width: 90%;
                     display: flex;
@@ -55,6 +82,19 @@
                     }
                 }
             }
+
+            .orders-footer {
+                position: relative;
+                width: 100%;
+                height: 60px;
+
+                h5 {
+
+                    position: absolute;
+                    left: 25px;
+                    bottom: 10px;
+                }
+            }
         }
 
         .buttons {
@@ -65,7 +105,7 @@
             justify-content: space-between;
             .btn {
                 padding: .5em 1em;
-                background-color: yellow;
+                background-color: #F0A500;
                 border: none;
                 border-radius: 5px;
                 &:active {
@@ -79,6 +119,6 @@
 }
 
 .demo {
-    background-color: red;
+    background-color: yellow;
     color: white;
 }

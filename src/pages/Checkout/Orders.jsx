@@ -26,7 +26,7 @@ function Orders() {
       }
       </div>
 
-      <div className="orders-header">
+      <div className="orders-footer">
         <h5>Total : {totalPrice}$</h5>
       </div>
 

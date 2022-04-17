@@ -4,6 +4,7 @@ import ContactForm from './ContactForm';
 import DeliveryForm from './DeliveryForm';
 import PaymentFrom from './PaymentForm';
 
+// import ArrowBars from './ArrowBars';
 import './Checkout.scss';
 
 
@@ -38,9 +39,9 @@ function Checkout() {
           <h3>Checkout</h3>
       </div>
       <div className="form-headers">
-        <h5 className={page >= 0 ? 'demo' : null}>Contact Info</h5>
-        <h5 className={page >= 1 ? 'demo' : null}>Delivery</h5>
-        <h5 className={page >= 2 ? 'demo' : null}>Payment</h5>
+        <h5 className={page >= 0 ? 'arrowBar demo' : 'arrowBar'}>Contact Info</h5>
+        <h5 className={page >= 1 ? 'arrowBar demo' : 'arrowBar'}>Delivery</h5>
+        <h5 className={page >= 2 ? 'arrowBar demo' : 'arrowBar'}>Payment</h5>
       </div>
       <div className='checkout-container'>
         <div className='forms'>
@@ -53,6 +54,7 @@ function Checkout() {
         </div>
         <Orders />
       </div>
+      {/* <ArrowBars /> */}
     </div>
   )
 }
